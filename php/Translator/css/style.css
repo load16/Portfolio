@@ -1,0 +1,368 @@
+.hat{                   /* Заглавие системы*/
+    position: fixed; /* Фиксированное положение */
+    left: 0px; /* Расстояние от правого края окна браузера */
+    right: 0px;
+    top: 0px; /* Расстояние сверху */
+    padding: 10px; /* Поля вокруг текста */ 
+    border: 1px solid #333; /* Параметры рамки */ 
+    display: inline-block;
+    font-size: 180%;
+    color: rgba(255,255,255,.9);
+    text-shadow: #2e7ebd 0 3px 2px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.1;
+    padding: 10px;
+    border: 1px solid;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 0px;
+    outline: none;
+    background: #128DC2 linear-gradient(#14AAEB, #129CD8 50%, #1087BA);
+    box-shadow: inset rgba(255,255,255,.5) 1px 1px; 
+    z-index: 1;
+}
+.heading{               /* Класс заглавие в элементах*/
+    /*display: inline-block;*/
+    font-size: 100%;
+    color: rgba(255,255,255,.9);
+    text-shadow: #2e7ebd 0 2px 1px;
+    text-decoration: none;
+    line-height: 1.1;
+    padding: 8px;
+    border: 1px solid;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 6px;
+    outline: none;
+    background: #128DC2 linear-gradient(#14AAEB, #129CD8 50%, #1087BA);
+    box-shadow: inset rgba(255,255,255,.5) 1px 1px;    
+}
+body {                  /* Класс тело системы*/
+    width: auto;
+    min-width: 405px;
+    margin: 0;
+    padding: 0;
+    color: #6a6651;
+    font-family:  "Lucida Grande", sans-serif;
+    font-size: 14px;
+    background-color: #faf8ec;
+    overflow:scroll;
+    border: none;
+    background: #D8EAF1;
+    background-repeat: repeat-y;
+    float: none;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+    background-position: 0 110px;
+
+}
+
+.main_menu {               /* Все элементы input  подсветка при фокусе*/
+    font-size: 22px;
+    padding: 10px;
+    border: 10px solid;
+    border-radius: 5px;
+    color: rgba(255,255,255,.9);
+    border-color: #3074B8 #28629B #1A3F64 #3074B8;
+    text-shadow: #4646FF 0 1px 2px;
+    
+    background: rgb(40,90,190) radial-gradient(circle at 0 0, rgba(255,255,255,.25), rgba(255,255,255,.10));
+  	box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+
+ 
+select{                 /* Все элементы select*/
+  /*display: inline-block;*/
+  width:auto;
+  cursor: pointer;
+  font-size: 100%;
+  color: rgba(255,255,255,.9);
+  text-shadow: #2e7ebd 0 2px 2px;
+  text-decoration: none;
+  line-height: 1.1;
+  white-space:normal;
+  padding:3px;
+  border: 1px solid;
+  border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+  border-radius: 5px;
+  outline: none;
+  background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 20%, #378bce);
+  box-shadow: inset rgba(255,255,255,.5) 1px 1px;
+}
+
+select:hover {          /* Все элементы select* подсветка при фокусе*/
+    cursor: pointer;
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#9dc7e7, #74afdd 30%, #378bce);
+    transition: .4s linear;
+    background-position: -200% 0, 0 0;
+}
+option:hover {          /* Все элементы select* подсветка при фокусе*/
+    color: rgb(0,0,0);
+    background-image: linear-gradient(#9dc7e7, #74afdd 30%, #378bce);
+    transition: .3s linear;
+    background-position: -200% 0, 0 0;
+}
+li{
+	cursor: pointer;
+	width: 8em;
+	font-size: 80%;
+	color: rgba(255,255,255,.9);
+	
+	
+	
+}
+
+li:hover {
+	
+}
+
+a{
+	cursor: pointer;
+	color: rgba(255,255,255,.9);
+	
+}
+
+a:hover {
+	color: rgba(255,100,100,.9);
+	transition: .3s linear;
+}
+
+input[type=checkbox]{                 /* Класс radio */
+  width: 11px;
+  height: 11px;
+   box-shadow:
+        inset 0 2px 1px rgba(0,0,0,.15),
+        0 2px 5px rgba(200,200,200,.1);
+  cursor: pointer;
+}
+
+
+input[type=text]{                      /* Все элементы input */
+  /*display: inline-block;*/
+  font-size: 100%;
+  cursor: inherit;
+  color: rgba(55,55,55,.9);
+  text-shadow: #ACACAC 0 1px 1px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  white-space: pre-line;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+  border-radius: 6px;
+  outline: none;
+  
+}
+
+input[type=text]:hover {               /* Все элементы input  подсветка при фокусе*/
+    color: rgb(100,40,40);
+    text-shadow: #808080 0 2px 2px;
+    background-position: -200% 0, 0 0;
+    box-shadow:
+   		inset rgba(0,0,0,.6) 1px 1px 7px,
+	   	inset rgba(0,0,0,.6) -1px -1px 7px,
+   	   	rgba(0,0,0,.4) 1px 1px 1px 1px;
+    transition: .3s linear;
+}
+input{                      /* Все элементы input */
+  /*display: inline-block;*/
+  font-size: 100%;
+  color: rgba(255,255,255,.9);
+  text-shadow: #2e7ebd 0 2px 2px;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow:
+   		inset rgba(0,0,0,.4) 3px 3px 7px,
+	   inset rgba(0,0,0,.4) -3px -3px 7px,
+   	   rgba(0,0,0,.8) 13px 13px 18px -13px;
+  transition: .3s linear;
+ 
+}
+
+
+input[type=submit], input[type=button]{                      /* Все кнопки */
+  /*display: inline-block;*/
+  font-size: 90%;
+  cursor: inherit;
+  color: rgba(255,255,255,.9);
+  text-shadow: #2e7ebd 0 2px 2px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  white-space: pre-line;
+  padding: 6px;
+  border: 0px solid;
+  border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+  border-radius: 10px;
+  outline: none;
+  background: #60a3d8 linear-gradient(#488BC8, #60a3d8 50%, #488BC8);
+  transition: .2s linear;
+  box-shadow:
+  	inset rgba(0,0,0,.5) -3px -3px 8px,
+	inset rgba(255,255,255,.9) 3px 3px 8px,
+   	rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+input[type=submit]:hover, input[type=button]:hover {               /* Все элементы input  подсветка при фокусе*/
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#3980BF, #488BC8 50%, #3980BF);
+    background-position: -200% 0, 0 0;
+    transition: .2s linear;
+}
+
+input[type=submit]:active, input[type=button]:active {               /* Все элементы input  подсветка при фокусе*/
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#3980BF, #488BC8 50%, #3980BF);
+    background-position: -200% 0, 0 0;
+    transition: .2s linear;
+    box-shadow:
+   		inset rgba(0,0,0,.4) 3px 3px 7px,
+	   inset rgba(0,0,0,.4) -3px -3px 7px,
+   	   rgba(0,0,0,.8) 13px 13px 18px -13px;
+}
+
+
+
+
+.content{               /* Контент системы */
+    position:relative; /* Фиксированное положение */
+    left:12px; /* Расстояние от правого края окна браузера */
+    top: 60px; /* Расстояние сверху */
+    /*max-width: 1020px;*/
+    font-weight: normal;
+    font-family:  Arial, Helvetica, sans-serif;
+    color: #4C4C4C;
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 8px;
+    border: 1px solid;
+    display: table;
+    text-shadow: #2e7ebd 0 2px 2px;
+    box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+.bottom{                /* Нижняя часть кабинета */
+    position: fixed; /* Фиксированное положение */
+    left: 0px; /* Расстояние от правого края окна браузера */
+    right: 0px;
+    bottom: 0px; /* Расстояние сверху */
+    padding: 1px; /* Поля вокруг текста */ 
+    
+    border: 1px solid #333; /* Параметры рамки */  
+    display: inline-block;
+    font-size: 100%;
+    color: rgba(255,255,255,.9);
+    text-shadow: #2e7ebd 0 2px 1px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.1;
+    padding: 1px;
+    border: 1px solid;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 0px;
+    outline: none;
+    background: #128DC2 linear-gradient(#14AAEB, #129CD8 50%, #1087BA);
+    box-shadow: inset rgba(255,255,255,.5) 1px 1px; 
+}
+
+
+.module{
+	font-size: 16px;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+.module_heat{
+	font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: #3333FF 0 2px 2px;
+    color: rgba(255,255,255,.9);
+    background: rgb(10,60,160) radial-gradient(circle at 0 0, rgba(255,255,255,.25), rgba(255,255,255,.15));
+  	box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+.module_tools{
+	font-size: 12px;
+    padding: 0px;
+    border: 10px solid;
+    border-radius: 5px;
+    text-shadow: #2e7ebd 0 2px 2px;
+    border-color: #3074B8 #28629B #1A3F64 #3074B8;
+    
+    background: rgb(50,100,300) radial-gradient(circle at 0 0, rgba(255,255,255,.85), rgba(255,255,255,.25));
+  	box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+textarea{
+	font-size: 8px;
+    padding: 2px;
+    border: 2px solid;
+    border-radius: 2px;
+    border-color: #1A3F64 #3074B8 #3074B8 #28629B;
+  	box-shadow:
+   		inset rgba(0,0,0,.5) 2px 2px 7px,
+	   	inset rgba(0,0,0,.5) -2px -2px 7px,
+   	   	rgba(0,0,0,.8) 2px 2px 2px -2px;
+   	transition: .3s linear;
+}
+
+textarea:hover{
+	box-shadow:
+   		inset rgba(0,0,0,.6) 1px 1px 7px,
+	   	inset rgba(0,0,0,.6) -1px -1px 7px,
+   	   	rgba(0,0,0,.4) 1px 1px 1px 1px;
+    transition: .3s linear;
+}
+
+
+.module_content{
+	font-size: 15px;
+	text-shadow: #2e7ebd 0 2px 2px;
+    padding: 8px;
+    border-radius: 5px;
+    color: rgba(255,255,255,.9);
+	background: rgb(50,100,200) radial-gradient(circle at 0 0, rgba(255,255,255,.15), rgba(255,255,255,.10));
+  	box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}
+
+
+.module_footer{
+	font-size: 16px;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: #2e7ebd 0 2px 2px;
+    background: rgb(100,100,100) radial-gradient(circle at 0 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+  	box-shadow:
+   		inset rgba(0,0,0,.5) -3px -3px 8px,
+	   inset rgba(255,255,255,.9) 3px 3px 8px,
+   	   rgba(0,0,0,.8) 3px 3px 8px -3px;
+}

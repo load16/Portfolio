@@ -1,0 +1,12 @@
+---
+- name: Плейбук выполняющий пинг для линкс серверов.
+  hosts: Linux_Servers
+  gather_facts: false
+  become: false
+
+  tasks:
+  - name: Выполнить пинг линуксовых серверов.
+    action: ping
+
+#  - name: Повторный пинг линуксовых серверов.
+#    action: ping

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addrulepath="/components/com_medical_registry/models/rules">
+    <fields name="REG_OPINION">
+        <fieldset name="PatientPersonalData"> 
+            <field
+                    type="text"
+                    name="name"
+                    id="name"
+                    label="REG_YOUR_NAME"
+                    message="REG_PLEASE_ENTER_YOUR_NAME"
+                    size="25"
+                    maxLength="255" />
+            <field
+                    type="textarea"
+                    name="proposal"
+                    id="proposal"
+                    label="REG_OPINION"
+                    message="REG_PLEASE_ENTER_A_REVIEW"
+                    rows="8"
+                    cols="35"
+                    required="true"  />
+            <field
+                    name="captcha"
+                    type="captcha"
+                    required="true"
+                    label="REG_ENTER_WHAT_YOU_SEE"
+                    description="REG_ELEMENT_PROTECT_FROM_BOTS"
+                    validate="captcha"/>
+           </fieldset>  
+    </fields>
+</form>

@@ -1,0 +1,27 @@
+---
+- name: Плейбук выполняющий настройку начальные установки.
+  hosts: Linux_Servers
+#  gather_facts: false
+#  become: false
+
+  tasks:
+  - name: Установка Hyper-V tools.
+    yum:
+      name: 'hyperv-daemons'
+      state: latest
+
+  - name: Установка сетевых net-tools утилит.
+    yum:
+      name: 'net-tools'
+      state: latest
+
+  - name: Установка редактора nano.
+    yum:
+      name: 'nano'
+      state: latest
+
+  - name: Enable SELinux
+    selinux:
+      policy: targeted
+      state: permissive
+

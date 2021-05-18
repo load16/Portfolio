@@ -1,0 +1,65 @@
+---
+- name: Плейбук выполняющий установку и настройку iptables.
+  hosts: Linux_Servers
+  gather_facts: false
+  become: false
+
+  tasks:
+
+  - name: Остановка штатного файрвола.
+    service:
+      name: 'firewalld'
+      state: stopped
+      enabled: no
+
+
+  - name: Установка пакета iptables.
+    yum:
+      name: 'iptables-services'
+      state: latest
+
+  - name: Запуск iptables.
+    service:
+      name: 'iptables.service'
+      state: started
+      enabled: yes
+
+
+  - name: Allow related and established connections
+    iptables:
+      chain: INPUT
+      ctstate: ESTABLISHED,RELATED
+      jump: ACCEPT
+    become: yes
+
+  - name: Allow new incoming SYN packets on TCP port 22 (SSH)
+    iptables:
+      chain: INPUT
+      protocol: tcp
+      destination_port: 22
+      ctstate: NEW
+      syn: match
+      jump: ACCEPT
+      comment: Accept new SSH connections.
+
+  - name: Set tcp flags
+    iptables:
+      chain: OUTPUT
+      jump: DROP
+      protocol: tcp
+      tcp_flags:
+        flags: ALL
+        flags_set:
+          - ACK
+          - RST
+          - SYN
+          - FIN
+
+  - name: Set the policy for the INPUT chain to DROP
+    iptables:
+      chain: INPUT
+      policy: DROP
+#    become: yes
+
+  - name: Сохранение текущих правил.
+    shell: iptables-save | sudo tee /etc/sysconfig/iptables

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addrulepath="/components/com_medical_registry/models/rules">
+    <fields name="Персональные данные">
+        <fieldset name="PatientPersonalData"> 
+            <field
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    label="Фамилия"
+                    description="пациента."
+                    required="true" 
+                    message="Проверте фамилию."
+                    size="40"
+                    maxLength="255" />
+            <field
+                    type="text"
+                    name="name"
+                    id="name"
+                    label="Имя"
+                    description="пациента."
+                    required="true" 
+                    message="Проверте имя."
+                    size="40"
+                    maxLength="255" />
+           <field
+                    type="text"
+                    name="patronymic"
+                    id="patronymic"
+                    label="Отчество"
+                    description="пациента."
+                    size="40"
+                    maxLength="255" />
+           <field
+                    name="mail"
+                    type="email"
+                    label="Email@"
+                    description="Электронная почта пациента для связи"
+                    size="30"
+                    class="inputbox"
+                    validate="email"
+                    message="Проверте Email@." />
+           <field
+                    type="tel"
+                    name="phone"
+                    id="phone_login"
+                    label="Телефон"
+                    description="для связи с пациентом."
+                    message="Проверте телефон."
+                    size="40"
+                    maxLength="255" 
+                    filter="tel"/>
+           <field
+                    type="calendar"
+                    name="data_of_birth"
+                    id="data_of_birth"
+                    label="Дата рождения"
+                    description="пациента."
+                    size="10"
+                    required="true" 
+                    message="Проверте дату рождения пациента. (гггг-мм-дд)"/>
+           </fieldset>
+           
+    </fields>
+    <fields name="Проживание">
+        <fieldset name="PatientResidence"> 
+            <field
+                    type="text"
+                    name="region"
+                    id="region"
+                    label="Область"
+                    description="проживания пациента."
+                    size="30"
+                    maxLength="255"
+                    required="true" 
+                    message="Проверте область проживания пациента."/>
+            <field
+                    type="text"
+                    name="district"
+                    id="district"
+                    label="Район"
+                    description="проживания пациента."
+                    size="30"
+                    maxLength="255"
+                    required="true" 
+                    message="Проверте район проживания пациента."/>
+            <field
+                    type="text"
+                    name="city"
+                    id="city"
+                    label="Город"
+                    description="проживания пациента."
+                    size="30"
+                    maxLength="255" 
+                    message="Проверте город проживания пациента."/>
+            <field
+                    type="text"
+                    name="village"
+                    id="village"
+                    label="Село"
+                    description="проживания пациента."
+                    size="30"
+                    maxLength="255" 
+                    message="Проверте село проживания пациента."/>
+            </fieldset>     
+    </fields>
+    <fields name="Медицинские данные">
+        <fieldset name="PatientMedicalData"> 
+            <field
+                    type="sql"
+                    name="id_type"
+                    id="id_type"
+                    label="Тин консультации"
+                    description="Тип консультации пациента."
+                    required="true"
+                    query="SELECT
+                            *
+                            FROM
+                            #__registry_type"
+                    key_field="id_type"
+                    value_field="type" /> 
+            <field
+                    type="textarea"
+                    name="description_recording"
+                    id="description_recording"
+                    label="Краткое описание цели записи на прием"
+                    description="для предварительного ознаколмления."
+                    rows="8"
+                    cols="40"
+                    required="true" 
+                    message="Проверте краткое описание цели записи на прием."/>
+            </fieldset>     
+    </fields> 
+</form>

@@ -1,0 +1,55 @@
+---
+- name: Плейбук выполняющий обновление ОС.
+  hosts: Linux_Servers
+  gather_facts: false
+  become: false
+
+  tasks:
+  - name: Проверка наличия обновлений
+    shell: yum list updates | awk 'f;/Обновленные пакеты/{f=1;}' | awk '{ print $1 }'
+    changed_when: updates.stdout_lines | length > 0
+    args:
+      warn: false
+    register: updates
+
+  - name: Просмотр пакетов для обновления
+    debug:
+      msg: "В наличии {{ updates.stdout_lines | length }} пакеты будут обновлены:\n\n{{ updates.stdout }}"
+  - when: updates.stdout_lines | length > 0
+    block:
+      - name: Установка обновлений с использованием yum
+        yum:
+          name: "*"
+          state: latest
+      - name: Просмотр количества обновленных пакетов
+        debug:
+          msg: "Пакеты в количестве {{ updates.stdout_lines | length }} - обновлены"
+
+      - name: Установка набора утилит yum-utils
+        package:
+          name: yum-utils
+
+      - name: Проверка необходимости перезагрузки ОС
+        shell: needs-restarting -r
+        failed_when: false
+        register: reboot_required
+        changed_when: false
+
+  - when: updates.stdout_lines | length > 0 and reboot_required.rc != 0
+    block:
+      - name: Перезагрузка по требованию
+        shell: sleep 3; reboot
+        ignore_errors: true
+        changed_when: false
+        async: 1
+        poll: 0
+
+      - name: Ожидание после перезегрузки
+        wait_for_connection:
+          timeout: 600
+          delay: 20
+        register: reboot_result
+
+      - name: Время перезагрузки
+        debug:
+          msg: "Система перезагрузилась за {{ reboot_result.elapsed }} секунд."
